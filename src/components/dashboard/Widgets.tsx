@@ -27,7 +27,7 @@ export function Widgets() {
       animate="show"
       className="grid grid-cols-1 lg:grid-cols-2 gap-6"
     >
-      <motion.div variants={item} className="rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl p-6">
+      <motion.div variants={item} className="rounded-2xl border border-white/[0.03] bg-black/20 p-6 hover:bg-white/[0.03] transition-all duration-200">
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-sm font-semibold text-white/80">Proyectos Recientes</h2>
           <span className="text-xs text-white/30">{projects.length} total</span>
@@ -62,7 +62,7 @@ export function Widgets() {
         </div>
       </motion.div>
 
-      <motion.div variants={item} className="rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl p-6">
+      <motion.div variants={item} className="rounded-2xl border border-white/[0.03] bg-black/20 p-6 hover:bg-white/[0.03] transition-all duration-200">
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-sm font-semibold text-white/80">Recursos Rápidos</h2>
           <span className="text-xs text-white/30">favoritos</span>

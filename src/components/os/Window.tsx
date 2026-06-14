@@ -87,9 +87,9 @@ export function Window({ id, title, icon, children, className = '' }: WindowProp
             initial="initial"
             animate="animate"
             exit="exit"
-            className={`relative w-full max-w-4xl max-h-[85vh] overflow-hidden rounded-2xl border border-white/[0.08] bg-black/70 backdrop-blur-2xl shadow-2xl shadow-black/50 ${className}`}
+            className={`relative w-full max-w-4xl max-h-[85vh] overflow-hidden rounded-2xl border border-white/[0.04] bg-black/70 backdrop-blur-2xl shadow-2xl shadow-black/50 ${className}`}
           >
-            <div className="flex items-center justify-between px-5 py-3 border-b border-white/[0.06]">
+            <div className="flex items-center justify-between px-5 py-3 border-b border-white/[0.03]">
               <div className="flex items-center gap-3">
                 <div className="flex gap-1.5">
                   <button

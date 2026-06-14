@@ -105,7 +105,7 @@ export function VisualTerminal() {
           e.preventDefault()
           handleCommand(input)
         }}
-        className="flex items-center gap-2 border-t border-white/[0.06] pt-4"
+        className="flex items-center gap-2 border-t border-white/[0.03] pt-4"
       >
         <span className="text-emerald-400 text-xs">➜</span>
         <span className="text-white/50 text-xs">~</span>

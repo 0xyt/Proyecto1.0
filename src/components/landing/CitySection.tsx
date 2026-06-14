@@ -117,7 +117,7 @@ export function CitySection() {
                 key={fact.label}
                 variants={factItem}
                 whileHover={{ y: -3, scale: 1.02 }}
-                className="rounded-xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl p-3.5 hover:border-white/[0.12] hover:bg-white/[0.05] transition-all duration-200"
+                className="rounded-xl border border-white/[0.03] bg-white/[0.03] p-4 hover:bg-white/[0.06] transition-all duration-200"
               >
                 <p className="text-lg font-semibold text-white">{fact.value}</p>
                 <p className="text-xs text-white/50 mt-0.5 font-medium">{fact.label}</p>
@@ -136,7 +136,7 @@ export function CitySection() {
             style={{ opacity: useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.2, 0.6, 0.6, 0.2]) }}
           />
           <motion.div
-            className="relative w-full max-w-md aspect-[4/5] rounded-2xl overflow-hidden border border-white/[0.1] shadow-2xl shadow-indigo-500/10"
+            className="relative w-full max-w-md aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-indigo-500/10"
             whileHover={{ scale: 1.02, borderColor: 'rgba(255,255,255,0.2)' }}
             transition={{ duration: 0.3 }}
           >

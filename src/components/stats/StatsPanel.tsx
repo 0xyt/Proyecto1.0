@@ -33,7 +33,7 @@ export function StatsPanel() {
         animate="show"
         className="grid grid-cols-1 lg:grid-cols-2 gap-6"
       >
-        <motion.div variants={item} className="rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl p-6">
+        <motion.div variants={item} className="rounded-2xl border border-white/[0.03] bg-white/[0.03] p-6">
           <h3 className="text-sm font-semibold text-white/80 mb-6">Resumen de Métricas</h3>
           <div className="space-y-5">
             {stats.map((stat) => (
@@ -57,10 +57,10 @@ export function StatsPanel() {
           </div>
         </motion.div>
 
-        <motion.div variants={item} className="rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl p-6">
+        <motion.div variants={item} className="rounded-2xl border border-white/[0.03] bg-white/[0.03] p-6">
           <h3 className="text-sm font-semibold text-white/80 mb-6">Tendencia</h3>
           <StatChart />
-          <div className="flex items-center justify-center gap-6 mt-6 pt-4 border-t border-white/[0.06]">
+          <div className="flex items-center justify-center gap-6 mt-6 pt-4 border-t border-white/[0.03]">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-white/30" />
               <span className="text-xs text-white/40">Este mes</span>

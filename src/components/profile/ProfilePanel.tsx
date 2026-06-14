@@ -29,7 +29,7 @@ export function ProfilePanel() {
         <motion.div variants={item} className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="w-24 h-24 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-white/[0.08] flex items-center justify-center text-3xl select-none flex-shrink-0"
+            className="w-24 h-24 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-white/[0.04] flex items-center justify-center text-3xl select-none flex-shrink-0"
           >
             ◎
           </motion.div>
@@ -53,7 +53,7 @@ export function ProfilePanel() {
           </div>
         </motion.div>
 
-        <motion.div variants={item} className="rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl p-6">
+        <motion.div variants={item} className="rounded-2xl border border-white/[0.03] bg-white/[0.03] p-6">
           <h3 className="text-sm font-semibold text-white/80 mb-6">Habilidades</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {skills.map((skill) => (
@@ -68,7 +68,7 @@ export function ProfilePanel() {
           </div>
         </motion.div>
 
-        <motion.div variants={item} className="rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl p-6">
+        <motion.div variants={item} className="rounded-2xl border border-white/[0.03] bg-white/[0.03] p-6">
           <h3 className="text-sm font-semibold text-white/80 mb-4">Experiencia</h3>
           <div className="space-y-4">
             {[
@@ -96,7 +96,7 @@ export function ProfilePanel() {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 * i }}
-                className="relative pl-5 border-l border-white/[0.06] group hover:border-white/[0.15] transition-colors"
+                className="relative pl-5 border-l border-white/[0.03] group hover:border-white/[0.08] transition-colors"
               >
                 <div className="absolute left-0 top-1 -translate-x-1/2 w-2 h-2 rounded-full bg-white/20 group-hover:bg-white/40 transition-colors" />
                 <h4 className="text-sm font-medium text-white/80">{exp.role}</h4>

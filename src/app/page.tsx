@@ -59,26 +59,28 @@ function BackgroundEffects() {
       <motion.div
         className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-indigo-500/10 blur-[120px]"
         animate={{
-          x: [0, 30, -20, 0],
-          y: [0, -30, 20, 0],
+          x: [0, 20, -10, 0],
+          y: [0, -20, 10, 0],
         }}
-        transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+        transition={{ duration: 30, repeat: Infinity, ease: 'easeInOut' }}
+        style={{ willChange: 'transform' }}
       />
       <motion.div
         className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-purple-500/8 blur-[120px]"
         animate={{
-          x: [0, -40, 20, 0],
-          y: [0, 30, -30, 0],
+          x: [0, -20, 10, 0],
+          y: [0, 20, -15, 0],
         }}
-        transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
+        transition={{ duration: 35, repeat: Infinity, ease: 'easeInOut' }}
+        style={{ willChange: 'transform' }}
       />
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-blue-500/5 blur-[150px]"
         animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.3, 0.5, 0.3],
+          scale: [1, 1.05, 1],
         }}
-        transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+        transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+        style={{ willChange: 'transform' }}
       />
       <div
         className="absolute inset-0 opacity-[0.03]"

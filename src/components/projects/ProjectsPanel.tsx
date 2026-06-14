@@ -25,7 +25,7 @@ export function ProjectsPanel() {
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="px-4 py-2 rounded-xl bg-white/[0.08] text-white/70 text-sm font-medium hover:bg-white/[0.12] transition-colors border border-white/[0.06]"
+          className="px-4 py-2 rounded-xl bg-white/[0.05] text-white/70 text-sm font-medium hover:bg-white/[0.1] transition-colors"
         >
           + Nuevo
         </motion.button>

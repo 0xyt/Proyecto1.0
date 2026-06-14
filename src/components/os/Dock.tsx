@@ -22,7 +22,7 @@ export function Dock() {
       transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
       className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"
     >
-      <div className="flex items-center gap-1 px-3 py-2 rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-2xl shadow-2xl shadow-black/40">
+      <div className="flex items-center gap-1 px-3 py-2 rounded-2xl border border-white/[0.04] bg-white/[0.04] backdrop-blur-2xl shadow-2xl shadow-black/40">
         {windows.map((w) => (
           <motion.button
             key={w.id}
