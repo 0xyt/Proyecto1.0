@@ -62,9 +62,19 @@ export function HeroSection() {
       </motion.div>
 
       <motion.div
+        className="fixed bottom-6 right-6 z-40 pointer-events-none font-mono text-[10px] text-white/15 tracking-widest"
+        style={{ opacity: useTransform(scrollYProgress, [0, 0.5], [1, 0]) }}
+      >
+        01 · 04
+      </motion.div>
+
+      <motion.div
         style={{ opacity: indicatorOpacity }}
         className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
+        <span className="text-[10px] text-white/15 font-mono tracking-wider mb-1">
+          Scroll para iniciar
+        </span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}

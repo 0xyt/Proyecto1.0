@@ -37,7 +37,8 @@ export function SystemInitSection() {
     })
     return {
       opacity: useTransform(scrollYProgress, [start, end], [0, 1]),
-      y: useTransform(scrollYProgress, [start, end], [8, 0]),
+      y: useTransform(scrollYProgress, [start, end], [12, 0]),
+      scale: useTransform(scrollYProgress, [start, end], [0.97, 1]),
       filter: baseFilter,
       active: useTransform(scrollYProgress, [end - 0.02, end + 0.04], [0, 1]),
     }
@@ -48,6 +49,18 @@ export function SystemInitSection() {
 
   return (
     <section ref={sectionRef} className="relative h-[500vh]">
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-white/[0.02] via-emerald-500/30 to-indigo-500/30 z-40 origin-left pointer-events-none"
+        style={{ scaleX: scrollYProgress, opacity: scrollYProgress }}
+      />
+
+      <motion.div
+        className="fixed bottom-6 right-6 z-40 pointer-events-none font-mono text-[10px] text-white/15 tracking-widest"
+        style={{ opacity: scrollYProgress }}
+      >
+        02 · 04
+      </motion.div>
+
       <div className="sticky top-0 h-screen flex items-center overflow-hidden bg-[#050508]">
         <div className="absolute inset-0 pointer-events-none">
           <motion.div
@@ -69,14 +82,14 @@ export function SystemInitSection() {
               INITIALIZING SYSTEM...
             </motion.p>
 
-            <div className="space-y-5">
+            <div className="space-y-6">
               {modules.map((mod, i) => {
-                const { opacity, y: yVal, active } = moduleStates[i]
+                const { opacity, y: yVal, scale, active } = moduleStates[i]
 
                 return (
                   <motion.div
                     key={mod.label}
-                    style={{ opacity, y: yVal }}
+                    style={{ opacity, y: yVal, scale }}
                   >
                     <div className="flex items-center gap-3 mb-1">
                       <motion.div
@@ -88,7 +101,7 @@ export function SystemInitSection() {
                           ]),
                           boxShadow: useTransform(active, [0, 1], [
                             '0 0 0px rgba(16,185,129,0)',
-                            '0 0 8px rgba(16,185,129,0.5)',
+                            '0 0 10px rgba(16,185,129,0.5)',
                           ]),
                         }}
                       />
@@ -109,7 +122,7 @@ export function SystemInitSection() {
                       style={{
                         color: useTransform(active, [0, 1], [
                           'rgba(255,255,255,0.15)',
-                          'rgba(255,255,255,0.3)',
+                          'rgba(255,255,255,0.4)',
                         ]),
                       }}
                     >
@@ -175,6 +188,26 @@ export function SystemInitSection() {
             </div>
           </motion.div>
         </div>
+
+        <motion.div
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
+          style={{ opacity: useTransform(scrollYProgress, [0, 0.08, 0.15], [1, 0.6, 0]) }}
+        >
+          <span className="text-[10px] text-white/15 font-mono tracking-wider">
+            Scroll para continuar
+          </span>
+          <motion.div
+            animate={{ y: [0, 4, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+            className="w-3 h-5 rounded-full border border-white/10 flex items-start justify-center pt-1"
+          >
+            <motion.div
+              className="w-0.5 h-1 rounded-full bg-white/20"
+              animate={{ y: [0, 3, 0], opacity: [0.2, 0.5, 0.2] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+            />
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )
