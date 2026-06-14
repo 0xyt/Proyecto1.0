@@ -2,7 +2,8 @@
 
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { getGreeting } from '@/lib/utils'
+
+const subtitleWords = 'Building Digital Experiences From Santa Cruz, Bolivia'.split(' ')
 
 export function HeroSection() {
   const ref = useRef<HTMLDivElement>(null)
@@ -18,19 +19,17 @@ export function HeroSection() {
   const glowScale = useTransform(scrollYProgress, [0, 0.4], [1, 1.3])
   const indicatorOpacity = useTransform(scrollYProgress, [0, 0.08], [1, 0])
 
-  const greeting = getGreeting()
-
   return (
     <section
       ref={ref}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <motion.div
-        className="absolute -top-60 -right-60 w-[800px] h-[800px] rounded-full bg-indigo-500/15 blur-[140px]"
+        className="absolute -top-80 -right-40 w-[900px] h-[900px] rounded-full bg-indigo-500/15 blur-[160px]"
         style={{ opacity: glowOpacity, scale: glowScale }}
       />
       <motion.div
-        className="absolute -bottom-60 -left-60 w-[700px] h-[700px] rounded-full bg-purple-500/15 blur-[140px]"
+        className="absolute -bottom-80 -left-40 w-[800px] h-[800px] rounded-full bg-purple-500/15 blur-[160px]"
         style={{ opacity: glowOpacity, scale: glowScale }}
       />
 
@@ -45,39 +44,54 @@ export function HeroSection() {
 
       <motion.div
         style={{ scale: heroScale, opacity: heroOpacity, y: heroY }}
-        className="text-center px-6 max-w-3xl"
+        className="text-center px-6 max-w-4xl"
       >
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.15, ease: [0.32, 0.72, 0, 1] }}
-          className="mb-5"
+          initial={{ opacity: 0, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.32, 0.72, 0, 1] }}
+          className="mb-4"
         >
-          <span className="text-[10px] text-white/25 font-mono tracking-[0.25em] uppercase">
+          <span className="text-xs sm:text-sm text-white/20 font-mono tracking-[0.35em] uppercase">
             OSCAR OS
           </span>
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: [0.32, 0.72, 0, 1] }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-white leading-[0.9] tracking-tight"
+          initial={{ opacity: 0, scale: 0.9, filter: 'blur(12px)' }}
+          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white leading-[0.85] tracking-tight"
         >
-          {greeting},{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/85 to-white/60">
-            Oscar
+          OSCAR
+          <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/85 to-white/50">
+            OS
           </span>
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5, ease: [0.32, 0.72, 0, 1] }}
-          className="text-sm sm:text-base text-white/25 mt-5 font-light max-w-sm mx-auto leading-relaxed"
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
+          className="mt-8 flex flex-wrap justify-center gap-x-[0.4em] gap-y-1"
         >
-          Productos digitales, automatizaciones y experiencias web.
-        </motion.p>
+          {subtitleWords.map((word, i) => (
+            <motion.span
+              key={word}
+              initial={{ opacity: 0, y: 12, filter: 'blur(6px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{
+                duration: 0.5,
+                delay: 1.1 + i * 0.07,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="text-base sm:text-lg md:text-xl text-white/25 font-light"
+            >
+              {word}
+            </motion.span>
+          ))}
+        </motion.div>
       </motion.div>
 
       <motion.div

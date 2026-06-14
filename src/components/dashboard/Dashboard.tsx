@@ -8,12 +8,16 @@ import { Widgets } from './Widgets'
 
 export function Dashboard() {
   return (
-    <div className="min-h-screen">
-      <HeroSection />
-      <StickySection />
+    <div className="h-screen overflow-y-auto snap-y snap-proximity">
+      <div className="snap-start shrink-0">
+        <HeroSection />
+      </div>
+      <div className="shrink-0">
+        <StickySection />
+      </div>
 
-      <section className="px-6 py-24">
-        <div className="max-w-7xl mx-auto space-y-10">
+      <section className="snap-start shrink-0 min-h-screen px-6 py-24 flex items-center">
+        <div className="max-w-7xl mx-auto w-full space-y-10">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
